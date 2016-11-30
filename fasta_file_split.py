@@ -32,7 +32,7 @@ def splitting_fasta_files():
         else:
             print "\n"+ "Please only type numbers." + "\n"
     fasta_file = open(FASTA_file_name, "r")
-    name = FASTA_file_name + "_enteries_" + str((completed_loops*number_of_enteries_per_file)+1) + "_" + str((completed_loops+1)*number_of_enteries_per_file) 
+    name = FASTA_file_name + "_enteries_" + str((completed_loops*number_of_enteries_per_file)+1) + "_" + str((completed_loops+1)*number_of_enteries_per_file) + ".splitout" 
     new_out_put_file = open(name,"w") 
     for line in fasta_file:
         if line[0] == ">":
@@ -46,7 +46,7 @@ def splitting_fasta_files():
             if line[0] == ">" and entry_count == number_of_enteries_per_file and total_enteries > total_enteries_written+number_of_enteries_per_file:
                 completed_loops += 1 
                 new_out_put_file.close
-                name = FASTA_file_name + "_enteries_" + str((completed_loops*number_of_enteries_per_file)+1) + "_" + str((completed_loops+1)*number_of_enteries_per_file) 
+                name = FASTA_file_name + "_enteries_" + str((completed_loops*number_of_enteries_per_file)+1) + "_" + str((completed_loops+1)*number_of_enteries_per_file) + ".splitout" 
                 new_out_put_file = open(name,"w")
                 new_out_put_file.write(line)
                 entry_count = 1
@@ -56,7 +56,7 @@ def splitting_fasta_files():
             elif line[0] == ">" and entry_count == number_of_enteries_per_file and total_enteries < total_enteries_written+number_of_enteries_per_file:
                 completed_loops += 1   
                 new_out_put_file.close
-                name = FASTA_file_name + "_enteries_" + str((completed_loops*number_of_enteries_per_file)+1) + "_" + str(total_enteries) 
+                name = FASTA_file_name + "_enteries_" + str((completed_loops*number_of_enteries_per_file)+1) + "_" + str(total_enteries) + ".splitout" 
                 new_out_put_file = open(name,"w")
                 new_out_put_file.write(line)
                 entry_count = 1
