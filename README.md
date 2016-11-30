@@ -17,7 +17,7 @@ chr1    Gnomon  exon    3199731 3671742 .       -       .       gene_id "497097"
 chr1    BestRefSeq      CDS     3421702 3421901 .       -       1       ID=cds1;Parent=rna1;Dbxref=CCDS:CCDS14803.1,GeneID:497097,Genbank:NP_001011874.1,MGI:MGI:3528744;Name=NP_001011874.1;gbkey=CDS;gene=Xkr4;product=XK-related protein 4;protein_id=NP_001011874.1
 to
 chr1    BestRefSeq      CDS     3421702 3421901 .       -       1       gene_id "497097"; gene_name "Xkr4"; transcript_id "NP_001011874.1";
-
+ 
 fasta_file_split.py
 
 This script will split up any fasta formatted file into a series of smaller files with a user defined subset of fasta entries. For example will split a fasta file with 550,000 entries into 550 files with 1000 entries in each in about 5 seconds.
