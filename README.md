@@ -28,6 +28,12 @@ chr1    BestRefSeq      CDS     3421702 3421901 .       -       1       gene_id 
 
 --------------------------------
 
+automatic_passing_of_fastq_files_to_STAR_aligner.txt
+
+The commands in here will also you to automate passing of fastq files to the STAR genome aligner, for example when looping through a series of folders for different samples and automatically aligning them.
+
+--------------------------------
+
 fasta_file_split.py
 
 This script will split up any fasta formatted file into a series of smaller files with a user defined subset of fasta entries. For example will split a fasta file with 550,000 entries into 550 files with 1000 entries in each in about 5 seconds.
