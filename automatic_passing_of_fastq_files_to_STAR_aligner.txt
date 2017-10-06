@@ -1,7 +1,7 @@
 So the code below will make a variable which is a list of FASTQ files appended by _1 or _2 and pass that to STAR to align.
 
-read_1=$(ls | grep _1 | tr '\n' ','); read_1=$(echo ${read_1::-1}); read_2=$(ls | grep _2 | tr '\n' ','); read_2=$(echo ${read_2::-1}); STAR --genomeDir /home/zoo/zool2001/mouse/genome --readFilesIn $read_1 $read_2 --runThreadN 20 --outFilterMultimapNmax 30 --outSAMstrandField intronMotif --outSAMtype BAM Unsorted; done
+read_1=$(ls | grep _1 | tr '\n' ','); read_1=$(echo ${read_1::-1}); read_2=$(ls | grep _2 | tr '\n' ','); read_2=$(echo ${read_2::-1}); STAR --genomeDir /path/to/directory --readFilesIn $read_1 $read_2 --runThreadN 20 --outFilterMultimapNmax 30 --outSAMstrandField intronMotif --outSAMtype BAM Unsorted; done
 
 This does the same but for single end reads.
 
-reads=$(ls | grep *fastq | tr '\n' ','); read=$(echo ${read_1::-1}); STAR --genomeDir /home/zoo/zool2001/mouse/genome --readFilesIn $reads --runThreadN 20 --outFilterMultimapNmax 30 --outSAMstrandField intronMotif --outSAMtype BAM Unsorted; done
+reads=$(ls | grep *fastq | tr '\n' ','); read=$(echo ${read_1::-1}); STAR --genomeDir /path/to/directory --readFilesIn $reads --runThreadN 20 --outFilterMultimapNmax 30 --outSAMstrandField intronMotif --outSAMtype BAM Unsorted; done
